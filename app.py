@@ -276,7 +276,7 @@ def plot_drawdowns(results, bm_dd):
     bm_d = bm_dd*100
     ax.fill_between(bm_d.index, bm_d.squeeze().values, 0, alpha=.1, color=C["bench"])
     ax.plot(bm_d.index, bm_d.squeeze().values, color=C["bench"], lw=1.2, ls="--",
-            label=f"Nifty 50  ({bm_d.squeeze().min():.1f}%)")
+            label=f"Nifty 50  ({float(bm_d.squeeze().min()):.1f}%)")
     ax.axhline(0, color="#fff", lw=.4, alpha=.3)
     ax.set_title("Drawdown Chart", fontsize=12, fontweight="bold", color=C["gold"], pad=8)
     ax.set_ylabel("Drawdown (%)")
